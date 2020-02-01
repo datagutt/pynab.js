@@ -2,6 +2,8 @@ var Pynab = require('./lib/index').default;
 var pynab = new Pynab('http://192.168.0.237:8080');
 (async () => {
     await pynab.Mode.setInteractive();
+    await pynab.Command.moveEar(0, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
+    await pynab.Command.moveEar(1, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
     await pynab.Command.setLED(0, 'red');
     await pynab.Command.setLED(1, 'green');
     await pynab.Command.setLED(2, 'blue');

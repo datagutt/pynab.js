@@ -19,11 +19,20 @@ export class CommandService {
             .catch(reject);
         });
     }
-    public moveEarLeft(value: number) {
-        return value;
-    }
-    public moveEarRight(value: number) {
-        return value;
+    public async moveEar(ear: number, steps: number) {
+        if (ear < -17 || ear > 17) throw new Error('Invalid steps provided');
+        if (!steps) throw new Error('No steps provided');
+        var stepsPos = steps;
+        var dir = 0;
+        if (steps < 0) {
+            dir = 1;
+            stepsPos = -steps;
+        }
+        const choreography = String.fromCharCode.apply(
+            null,
+            [0, 20, ear, dir, 0, 17, ear, stepsPos]
+        );
+        await this.sendChoreography(choreography);
     }
     public async setLED(led: LedRange, color: string) {
         if (!color) throw new Error('No color provided');
