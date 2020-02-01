@@ -19,6 +19,18 @@ export class CommandService {
             .catch(reject);
         });
     }
+    public async playAudio(path: string) {
+        return new Promise((resolve, reject) => {
+            this.client.put(
+                '/api/command',
+                {
+                    sequence: `[{"audio":"${path}"}]`
+                }
+            )
+            .then(resolve)
+            .catch(reject);
+        });
+    }
     public async moveEar(ear: number, steps: number) {
         if (ear < -17 || ear > 17) throw new Error('Invalid steps provided');
         if (!steps) throw new Error('No steps provided');

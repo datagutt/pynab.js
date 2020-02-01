@@ -9,6 +9,7 @@ var pynab = new Pynab('http://192.168.0.237:8080');
     await pynab.Command.setLED(2, 'green');
     await pynab.Command.setLED(3, 'pink');
     await pynab.Command.setLED(4, 'green');
+    await pynab.Command.playAudio('nabsurprised/109.mp3');
     setTimeout(async () => {
         await pynab.Mode.setIdle();
     }, 5000);
