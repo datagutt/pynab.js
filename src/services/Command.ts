@@ -43,4 +43,13 @@ export class CommandService {
         );
         await this.sendChoreography(choreography);
     }
+    public async blinkLED(led: LedRange, color: string) {
+        if (!color) throw new Error('No color provided');
+        const rgba = colorToRGBA(color);
+        const choreography = String.fromCharCode.apply(
+            null,
+            [0, 1, 10, 0, 7, led, rgba[0], rgba[1], rgba[2], 0, 0, 15, 7, led, 0, 0, 0, 0, 0]
+        );
+        await this.sendChoreography(choreography);
+    }
 }
