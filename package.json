@@ -2,7 +2,7 @@
   "name": "pynab.js",
   "version": "1.0.0",
   "description": "Typescript API interface for the PyNab Nabaztag revival pcb",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",

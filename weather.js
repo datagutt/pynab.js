@@ -1,8 +1,6 @@
 var Pynab = require('./lib/index').default;
 var pynab = new Pynab('http://192.168.0.237:8080');
-function randomHex(){
-    return '#'+Math.floor(Math.random()*16777215).toString(16);
-}
+
 (async () => {
     await pynab.Mode.setInteractive();
     await pynab.Command.playMultipleAudio([
