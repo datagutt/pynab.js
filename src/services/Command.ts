@@ -15,8 +15,8 @@ export class CommandService {
 					sequence: `[{"choreography":"data:application/x-nabaztag-mtl-choreography;base64,${base64}"}]`
 				}
 			)
-				.then(resolve)
-				.catch(reject);
+			.then(resolve)
+			.catch(reject);
 		});
 	}
 	public async playAudio (path: string) {
@@ -27,8 +27,20 @@ export class CommandService {
 					sequence: `[{"audio":"${path}"}]`
 				}
 			)
-				.then(resolve)
-				.catch(reject);
+			.then(resolve)
+			.catch(reject);
+		});
+	}
+	public async playMultipleAudio (audio: []) {
+		return new Promise((resolve, reject) => {
+			this.client.put(
+				"/api/command",
+				{
+					sequence: `[{"audio":${JSON.stringify(audio)}}]`
+				}
+			)
+			.then(resolve)
+			.catch(reject);
 		});
 	}
 	public async moveEar (ear: number, steps: number) {
