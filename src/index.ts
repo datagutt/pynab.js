@@ -1,9 +1,9 @@
-import { Client } from './Client';
+import { Client } from "./Client";
 import {
     CommandService,
     ModeService,
     StateService
-} from './services';
+} from "./services";
 
 /**
  * Pynab API class
@@ -14,7 +14,7 @@ export default class Pynab {
     public Mode: ModeService;
     public State: StateService;
 
-    constructor(baseUrl: string) {
+    constructor (baseUrl: string) {
         this.client = new Client(baseUrl);
         this.Command = new CommandService(this.client);
         this.Mode = new ModeService(this.client);

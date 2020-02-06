@@ -1,11 +1,11 @@
-import { Client } from '../Client';
+import { Client } from "../Client";
 
 export class ModeService {
-    constructor(private client: Client) { }
-    public async sendMode(mode: string) {
+    constructor (private client: Client) { }
+    public async sendMode (mode: string) {
         return new Promise((resolve, reject) => {
             this.client.put(
-                '/api/mode',
+                "/api/mode",
                 {
                     mode
                 }
@@ -14,10 +14,10 @@ export class ModeService {
             .catch(reject);
         });
     }
-    public async setInteractive() {
-        await this.sendMode('interactive');
+    public async setInteractive () {
+        await this.sendMode("interactive");
     }
-    public async setIdle() {
-        await this.sendMode('idle');
+    public async setIdle () {
+        await this.sendMode("idle");
     }
 }

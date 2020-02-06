@@ -1,3 +1,3 @@
 export interface StateInterface {
-    result: 'interactive' | 'idle'
+	result: "interactive" | "idle"
 }
