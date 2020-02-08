@@ -1,5 +1,5 @@
 import { Client } from "../Client";
-import colorToRGBA from "color-rgba";
+const colorToRGBA = require("color-rgba");
 import { btoa } from "abab";
 
 type LedRange = 0 | 1 | 2 | 3 | 4; // nose, left, middle, right and bottom led
