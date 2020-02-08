@@ -1,5 +1,5 @@
 import { Client } from "../Client";
-declare type LedRange = 0 | 1 | 2 | 3;
+declare type LedRange = 0 | 1 | 2 | 3 | 4;
 export declare class CommandService {
     private client;
     constructor(client: Client);
