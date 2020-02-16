@@ -1,5 +1,11 @@
 import { Client } from "../Client";
-declare type LedRange = 0 | 1 | 2 | 3 | 4;
+export declare enum LEDS {
+    BOTTOM = 0,
+    RIGHT = 1,
+    MIDDLE = 2,
+    LEFT = 3,
+    NOSE = 4
+}
 export declare class CommandService {
     private client;
     constructor(client: Client);
@@ -7,7 +13,6 @@ export declare class CommandService {
     playAudio(path: string): Promise<unknown>;
     playMultipleAudio(audio: []): Promise<unknown>;
     moveEar(ear: number, steps: number): Promise<void>;
-    setLED(led: LedRange, color: string): Promise<void>;
-    blinkLED(led: LedRange, color: string): Promise<void>;
+    setLED(led: LEDS, color: string): Promise<void>;
+    blinkLED(led: LEDS, color: string): Promise<void>;
 }
-export {};
