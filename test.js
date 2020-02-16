@@ -7,7 +7,7 @@ function randomHex(){
     await pynab.Mode.setInteractive();
     await pynab.Command.moveEar(0, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
     await pynab.Command.moveEar(1, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
-    await pynab.Command.setLED(0, randomHex());
+    await pynab.Command.blinkLED(0, randomHex());
     await pynab.Command.setLED(1, randomHex());
     await pynab.Command.setLED(2, randomHex());
     await pynab.Command.setLED(3, randomHex());
