@@ -1,5 +1,5 @@
 import { Client } from "./Client";
-import { CommandService, ModeService, StateService } from "./services";
+import { CommandService, LEDS, ModeService, StateService } from "./services";
 /**
  * Pynab API class
  */
@@ -8,5 +8,6 @@ export default class Pynab {
     Command: CommandService;
     Mode: ModeService;
     State: StateService;
+    LEDS: typeof LEDS;
     constructor(baseUrl: string);
 }

@@ -7,11 +7,11 @@ function randomHex(){
     await pynab.Mode.setInteractive();
     await pynab.Command.moveEar(0, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
     await pynab.Command.moveEar(1, (Math.ceil(Math.random() * (17 + 17)) - 17) + 1);
-    await pynab.Command.blinkLED(0, randomHex());
-    await pynab.Command.setLED(1, randomHex());
-    await pynab.Command.setLED(2, randomHex());
-    await pynab.Command.setLED(3, randomHex());
-    await pynab.Command.setLED(4, randomHex());
+    await pynab.Command.blinkLED(pynab.LEDS.NOSE, randomHex());
+    await pynab.Command.setLED(pynab.LEDS.LEFT, randomHex());
+    await pynab.Command.setLED(pynab.LEDS.MIDDLE, randomHex());
+    await pynab.Command.setLED(pynab.LEDS.RIGHT, randomHex());
+    await pynab.Command.setLED(pynab.LEDS.BOTTOM, randomHex());
     await pynab.Command.playAudio(`nabsurprised/${Math.floor(Math.random(0,1) * 297)}.mp3`);
     setTimeout(async () => {
         await pynab.Mode.setIdle();
